@@ -47,7 +47,7 @@ public class ContactEntity implements Serializable{
     private Set<HobbyEntity> hobby;
 
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    @JoinTable(name = "id_place", joinColumns = @JoinColumn(name = "id_contact"), inverseJoinColumns = @JoinColumn(name = "id_place"))
+    @JoinTable(name = "id", joinColumns = @JoinColumn(name = "id_contact"), inverseJoinColumns = @JoinColumn(name = "id_place"))
     private Set<PlaceEntity> places;
 
     @OneToMany(mappedBy = "id_contact")

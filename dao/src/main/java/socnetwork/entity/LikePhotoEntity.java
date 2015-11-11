@@ -9,16 +9,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "likePhoto")
 public class LikePhotoEntity {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_like_photo", nullable = false)
     private int id_like_photo;
 
     @Column(name = "id_photo", nullable = false)
     private int id_photo;
 
-    @Id
+
     @Column(name = "id_contact", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @ManyToOne
     @JoinColumn
     private int id_contact;

@@ -6,15 +6,16 @@ import javax.persistence.*;
  * Created by ulia2612 on 08.11.15.
  */
 public class LikePostEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_like_post", nullable = false)
     private int id_like_post;
 
     @Column(name = "id_post", nullable = false)
     private int id_post;
 
-    @Id
     @Column(name = "id_contact", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @ManyToOne
     @JoinColumn
     private int id_contact;
